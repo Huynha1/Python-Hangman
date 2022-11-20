@@ -1,5 +1,3 @@
-# 3 hours of my life gone :(
-
 import random
 
 def stages(count):
@@ -96,7 +94,7 @@ def find(s, ch):
 
 def guess(Word, Input, Letters, Hidden, Count):
 
-    if len(Input) == 1: # This is completely unecessary but i cbs removing it
+    if len(Input) == 1: # This is completely unecessary 
         if Input in Word.lower(): 
 
             if Word.lower().count(Input) == 1: # If the letter only appears once in the word
@@ -144,7 +142,7 @@ elif SelectedWord in words[1]:
     Category = "Tech Brands/Companies"
 elif SelectedWord in words[2]:
     Category = "Countries"
-HiddenWord = [] # This list is going to be a string where the characters in the selected word are replaced with "-", I might change it idk
+HiddenWord = [] # String where the characters in the selected word are replaced with "-"
 
 for i in SelectedWord:
     if i != " ":
@@ -152,16 +150,17 @@ for i in SelectedWord:
     else:
         HiddenWord.append(" ") # white space is white space
 
-while 1 > 0: # INFINITE LOOOOOOOOOOP
+while 1 > 0: 
     
     print("\nThe category is {}".format(Category))
+    print("Input /help for help")
 
     if count != 7:
         print("the word is: {}".format("".join(HiddenWord))) # Print the blank word
     else:
         print("\nthe word is: {}".format(SelectedWord))
         
-    print() # Resurrects Nelson Mandela
+    print() 
 
     print(stages(count)) # Print the different stanges of hang depending on what count is
 
@@ -193,9 +192,11 @@ while 1 > 0: # INFINITE LOOOOOOOOOOP
         if Input.lower() == SelectedWord.lower():
             print("\n**** NICE ONE MATE YOU SAVED HIM **** \n")
             break
+        elif Input.lower() == "/help":
+            print("- To guess a letter, input a single letter\nTo guess a word, input a word (the incorrect word will result in a lost)")
+            continue
+            
         else:
-            print("\nBRO YOU JUST KILLED HIM, THE WORD WAS {}".format(SelectedWord))
+            print("\nGAME OVER, THE WORD WAS {}".format(SelectedWord))
             
             break
-
-#there's so much shit i can clean up but cbs
